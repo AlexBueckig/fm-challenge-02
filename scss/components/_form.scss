@@ -68,17 +68,33 @@
   }
 }
 
+@include for-tablet-up {
+  .form {
+    &__row {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+}
+
 @include for-desktop-up {
   .form {
     margin: 0;
-    width: 50%;
+    width: 60%;
 
     &__button {
       min-width: 100px;
     }
 
     &__row {
+      width: initial;
       max-width: 450px;
     }
+  }
+}
+
+@include for-big-desktop-up {
+  .form {
+    width: 50%;
   }
 }

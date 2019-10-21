@@ -21,7 +21,7 @@
       grid-column: 1;
       margin: 2em 0;
       width: 50%;
-      transform: translate(50%);
+      place-self: center;
     }
   }
 }
@@ -29,5 +29,9 @@
 @include for-big-desktop-up {
   .header {
     grid-template-columns: 1fr 615px;
+
+    &__logo {
+      width: 40%;
+    }
   }
 }

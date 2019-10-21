@@ -3,8 +3,10 @@
   background: map-get($map: $gradients, $key: gradient-1);
 
   &__image {
+    max-height: 300px;
+    overflow: hidden;
     img {
-      width: 100%;
+      min-width: 100%;
       height: auto;
     }
   }
@@ -34,10 +36,33 @@
   }
 }
 
+@include for-tablet-up {
+  .hero {
+    &__image {
+      max-height: 400px;
+    }
+
+    &__header,
+    &__text {
+      width: 60%;
+    }
+
+    &__header {
+      margin: 1.5em auto 0.5em;
+      font-size: 3rem;
+    }
+
+    &__text {
+      margin: 0 auto 2.5em;
+      font-size: 1rem;
+    }
+  }
+}
+
 @include for-desktop-up {
   .hero {
     display: grid;
-    grid-template-columns: 1fr 450px;
+    grid-template-columns: 1fr 500px;
     height: 800px;
     justify-content: center;
     align-items: center;
@@ -45,11 +70,10 @@
     &__header,
     &__text {
       margin: 0;
-      width: 50%;
     }
 
     &__header {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-bottom: 0.5em;
     }
 
@@ -74,6 +98,7 @@
 
     &__image {
       grid-column: 2;
+      max-height: initial;
     }
   }
 }
@@ -82,13 +107,14 @@
   .hero {
     grid-template-columns: 1fr 615px;
 
+    &__header,
+    &__text {
+      width: 40%;
+    }
+
     &__header {
       font-size: 4rem;
       margin-bottom: 0.5em;
-    }
-
-    &__text {
-      font-size: 1.25rem;
     }
   }
 }
