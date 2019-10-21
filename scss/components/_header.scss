@@ -1,0 +1,33 @@
+.header {
+  display: block;
+  width: 100%;
+
+  &__logo {
+    display: inline-block;
+    margin: 1em 2em;
+    img {
+      height: 1.5em;
+    }
+  }
+}
+
+@include for-desktop-up {
+  .header {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 500px;
+
+    &__logo {
+      grid-column: 1;
+      margin: 2em 0;
+      width: 50%;
+      transform: translate(50%);
+    }
+  }
+}
+
+@include for-big-desktop-up {
+  .header {
+    grid-template-columns: 1fr 615px;
+  }
+}
